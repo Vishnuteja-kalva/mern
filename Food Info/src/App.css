@@ -1,0 +1,432 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: small;
+  font-weight: bold;
+  color: whitesmoke;
+  background-image: linear-gradient(
+      rgba(5, 5, 5, 0.7), 
+      rgba(7, 7, 7, 0.7)
+    ),
+    url("https://cdn.pixabay.com/photo/2024/06/22/08/07/ai-generated-8845695_640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.set {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  margin-left: -10px;
+}
+
+.ip_container {
+  max-width: 300px;
+  width: 230px;
+  margin: 0 auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-image: url("https://img.freepik.com/premium-photo/wet-black-apple-black-background-generative-ai_849906-1634.jpg");
+  box-shadow: 0 4px 8px rgba(134, 25, 25, 0.1);
+  transition: transform 0.3s ease;
+  background-position-x: -120px ;
+  background-position-y: -25px;
+  background-color: black;
+  box-shadow: 5px 0px 20px rgba(255, 2, 2, 0.7);
+}
+
+.ip_container label {
+  margin-left: -120px;
+  text-shadow: black;
+  margin-top: 1px;
+  margin-bottom: -1px;
+  font-weight: lighter;
+}
+
+.ip_container img {
+  width: 259px;
+  height: 90px;
+  margin-bottom: 5px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-style: none;
+  border: 1px solid whitesmoke;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  font-size: 23px;
+}
+
+.input_group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_group input {
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.5s ease;
+}
+
+.input_group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.show_password {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.show_password label {
+  margin-left: 5px;
+}
+
+#Login_btn {
+  width: 50%;
+  padding: 8px;
+  background-color: #d6480b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#Login_btn:hover {
+  background-color: #029005;
+  text-decoration: underline;
+}
+
+.Login_footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.Login_footer p {
+  margin: 5px 0;
+}
+
+.Login_footer a {
+  color: #d6480b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Login_footer a:hover {
+  color: #029005;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.Login_lang {
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.Login_lang a {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #d6480b;
+}
+
+.Login_lang a:hover {
+  text-decoration: underline;
+  color: #029005;
+}
+
+.forgot-password-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.forgot-password-container h2 {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.forgot-password-container p {
+  color: grey;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+input[type="email"] {
+  width: 95%;
+  padding: 10px 5px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  width: 60%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.forgot-password-footer {
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.forgot-password-footer a:hover {
+  text-decoration: underline;
+  color: green;
+  font-weight: bold;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #28a745;
+}
+
+.error {
+  color: red;
+}
+
+.Whole {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+}
+
+.part1 img {
+  max-width: 100px;
+  display: inline-flex;
+  border: 1px solid white;
+  padding: 5px 5px;
+  border-radius: 50px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+
+.login-container {
+  background-color: none;
+  height: fit-content;
+  width: 280px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.log-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: -1px;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(5, 5, 5, 0.5),
+      rgba(7, 7, 7, 0.5)
+    ),
+    url("https://storage.googleapis.com/a1aa/image/2vPac6wDiqZlCtCNpjkJs68bb0X83MM2x96ha5iUiWeyOXzJA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 1px;
+}
+
+.log-block img {
+  max-width: 277px;
+  max-height: 85px;
+}
+
+.log-block h3 {
+  margin-left: -120px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+  width: 85%;
+  height: 30px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border: 1px solid darkgrey;
+  border-radius: 20px;
+  padding-left: 5%;
+}
+
+label {
+  margin-top: 10px;
+}
+
+.log-block button {
+  background-color: orange;
+  padding: 14px 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 40%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+}
+
+button:hover {
+  background-color: rgb(5, 216, 16);
+  color: blue;
+  text-decoration: underline;
+  font-size: 100%;
+}
+
+.log-block p {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 1px;
+  color: black;
+}
+
+.nutrition-fetcher {
+  width: 790px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-image:  linear-gradient(
+      hsla(0, 25%, 98%, 0.502), 
+      rgba(252, 249, 249, 0.5)
+  );
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 210px;
+  margin-left: -25px;
+  margin-top: -19px;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input input {
+  width: 90%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+.input button {
+  padding: 4px 15px;
+  background-color: #007bff;
+  color:black;
+  border:1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.nutrition-table {
+  max-width: 80%;
+  border-collapse:separate;
+  margin-left: -25px;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  border: 1px solid rgb(12, 12, 12);
+  padding: 10px;
+  text-align: left;
+}
+
+.nutrition-table th {
+  background-color: #007bff;
+  color:black;
+}
+
+
+.nutrition-table tr {
+  background-color: #e0e0e0;
+}
+.nutrition-fetcher h1{
+color:black;
+}
+.nutrition-table td{
+  color:black;
+}
+#vid_btn{
+  color:black;
+  background-color: #007bff;
+  border:1px solid white;
+}
+#vid_btn:hover{
+  color:white;
+  background-color: #28a745;
+  border:1px solid black;
+  box-shadow: 5px 0px 20px rgba(255, 2, 2, 0.7);
+}
+
