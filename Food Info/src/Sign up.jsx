@@ -11,7 +11,7 @@ export const SignupForm = () => {
   const [password, setPassword] = useState('');
   const Save = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/',{username,email,password})
+    axios.post('https://food-info-backend.onrender.com/',{username,email,password})
     .then((result)=>{
       window.alert("Successfully registered")
       navigate("/Login")
