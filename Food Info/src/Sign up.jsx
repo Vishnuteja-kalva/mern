@@ -1,27 +1,51 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Signupimg from "./assets/Sign_Up.jpg";
 import axios from 'axios';
 
 export const SignupForm = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
   const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const Save = async (e) => {
+  // Backend URL from environment variable or fallback
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://food-info-backend.onrender.com';
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/',{username,email,password})
-    .then((result)=>{
-      window.alert("Successfully registered")
-      navigate("/Login")
+    setLoading(true);
+    setError('');
 
-    })
-    .catch(err=>console.log(err))
+    try {
+      const response = await axios.post(`${BACKEND_URL}/`, formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true // If using credentials/cookies
+      });
 
-
+      if (response.data) {
+        window.alert("Successfully registered");
+        navigate("/Login");
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+      console.error('Registration error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,7 +71,7 @@ export const SignupForm = () => {
         </div>
       </div>
 
-      <form onSubmit={Save}>
+      <form onSubmit={handleSubmit}>
         <div className="login-container">
           <div className="log-block">
             <img
@@ -55,55 +79,55 @@ export const SignupForm = () => {
               alt="Logo"
               style={{ width: '438px', height: '135px', border: 'solid 2px white', borderRadius: '5px' }}
             />
-
-            {error && (
-              <div style={{ color: 'red', margin: '10px 0' }}>
-                {error}
-              </div>
-            )}
+            
+            {error && <div className="error-message" style={{color: 'red'}}>{error}</div>}
 
             <h3 style={{marginRight:"45px"}}>Username*</h3>
             <input
               type="text"
+              name="username"
               placeholder="Enter Username"
+              value={formData.username}
+              onChange={handleChange}
               required
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
             />
 
             <h3 style={{marginRight:"69px"}}>Gmail*</h3>
             <input
               type="email"
+              name="email"
               placeholder="Enter Gmail"
+              value={formData.email}
+              onChange={handleChange}
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
 
             <h3>Create Password*</h3>
             <input
               type="password"
+              name="password"
               placeholder="Create Password"
+              value={formData.password}
+              onChange={handleChange}
               required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
+            
             <br />
             <button 
               type="submit" 
-              disabled={isLoading}
-              style={{ opacity: isLoading ? 0.7 : 1 }}
+              disabled={loading}
+              style={{
+                opacity: loading ? 0.7 : 1,
+                cursor: loading ? 'not-allowed' : 'pointer'
+              }}
             >
-              <span style={{ color: "black", fontFamily: "'Times New Roman', Times, serif" }}>
-                {isLoading ? 'Signing Up...' : 'Sign Up'}
+              <span style={{ color:"black", fontFamily: "'Times New Roman', Times, serif" }}>
+                {loading ? 'Signing Up...' : 'Sign Up'}
               </span>
             </button>
 
-            <p style={{ color: "white" }}>
-              Have An Account?{' '}
-              <Link to="/Login" style={{ color: "Orange", fontSize: "130%", fontWeight: "bold" }}>
-                Login
-              </Link>
+            <p style={{ color:"white" }}>
+              Have An Account? <Link to="/Login" style={{ color:"Orange", fontSize:"130%", fontWeight:"bold"}}> Login</Link>
             </p>
           </div>
         </div>
