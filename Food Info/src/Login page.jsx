@@ -24,6 +24,7 @@ export let Login = () => {
                   withCredentials: true
                 }
               )
+            axios.post('https://food-info-backend.onrender.com/login', { username, password })
                 .then(result => {
                     const { message } = result.data;
                     if (message === "Success") {

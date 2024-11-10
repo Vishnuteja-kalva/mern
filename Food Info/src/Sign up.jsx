@@ -13,30 +13,15 @@ export const SignupForm = () => {
 
   const Save = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    setError('');
+    axios.post('http://localhost:3000/',{username,email,password})
+    .then((result)=>{
+      window.alert("Successfully registered")
+      navigate("/Login")
 
-    try {
-      const response = await axios.post('https://food-info-backend.onrender.com/', 
-        { username, email, password },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true
-        }
-      );
+    })
+    .catch(err=>console.log(err))
 
-      if (response.data) {
-        window.alert("Successfully registered");
-        navigate("/Login");
-      }
-    } catch (err) {
-      console.error('Registration error:', err);
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
+
   };
 
   return (
