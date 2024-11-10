@@ -6,7 +6,7 @@ export const NutritionFetcher = () => {
     const [inputValue, setInputValue] = useState(''); 
     const [loading, setLoading] = useState(false); 
 
-    const apiKey = process.env.CALORIENINJAS_API_KEY;
+    const apiKey = "0S3tnIX82GmJZocmC72OUA==BXqW47D6hZxAcROy";
 
     const fetchNutritionData = async (query) => {
         setLoading(true); 

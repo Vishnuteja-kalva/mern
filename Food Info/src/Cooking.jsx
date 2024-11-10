@@ -29,7 +29,7 @@ export const Video = () => {
     }
 
     const combinedQuery = query.trim(); 
-    const API_KEY = process.env.YOUTUBE_API_KEY; 
+    const API_KEY = "AIzaSyCmGMqBWPd684cFCKL4kVsV4fEZR0xmg2Y"; 
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(combinedQuery)}&type=video&maxResults=10&key=${API_KEY}`;
 
     try {

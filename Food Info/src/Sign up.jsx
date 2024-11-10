@@ -13,7 +13,6 @@ export const SignupForm = () => {
     e.preventDefault();
     axios.post('http://localhost:3000/userinfo',{username,email,password})
     .then((result)=>{
-      console.log(result)
       window.alert("Successfully registered")
       navigate("/Login")
 

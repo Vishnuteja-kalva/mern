@@ -1,40 +1,3 @@
-// const express = require("express")
-// const mongoose = require("mongoose")
-// const cors = require("cors")
-// const app = express()
-// app.use(express.json())
-// app.use(cors())
-// mongoose.connect('mongodb://127.0.0.1:27017/Full');
-// const UserModel = require("./models/User")
-// app.post('/login',(req,res)=>{
-//    const {username,password} = req.body
-//    UserModel.findOne({username:username})
-//    .then(result => {
-//     if(result){
-//         if(result.password === password)
-//         {   res.json("Success")
-            
-//         }
-//         else{
-//             res.json("Incorrect password")
-           
-//         }
-//     }
-//     else{
-//         res.json("Record not found. please Register")
-//     }
-//    })
-
-// })
-// app.post('/userinfo',(req,res)=>{
-//     UserModel.create(req.body)
-//     .then(users => res.json(users))
-//     .catch(err => console.log(err))
-// })
-// port = 3000
-// app.listen(port,()=>{
-//     console.log("Server is created")
-// })
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -43,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/Full');
+mongoose.connect('mongodb+srv://Vishnuteja:tejavishnuu@cluster0.j6ir4.mongodb.net/Userinfo?retryWrites=true&w=majority&appName=Cluster0');
 const UserModel = require("./models/User");
 
 app.post('/login', (req, res) => {

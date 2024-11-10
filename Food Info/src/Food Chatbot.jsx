@@ -44,7 +44,6 @@ export const FoodChatbot = () => {
 
     const handleUserInput = async (e) => {
         e.preventDefault();
-
         const userMessage = { text: userInput, user: "user" };
         setMessages((prev) => [...prev, userMessage]);
 
@@ -57,7 +56,7 @@ export const FoodChatbot = () => {
 
         try {
             const response = await axios.post(
-                'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key==${process.env.GENIE_API_KEY}', // Ensure this key is valid
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBZd2z4MrtmGWwW0c5lq60icZTPj5nxTC8`, // Ensure this key is valid
                 {
                     contents: [
                         {
@@ -75,6 +74,8 @@ export const FoodChatbot = () => {
                     },
                 }
             );
+            
+
 
             console.log("Response from API:", response.data);
 
