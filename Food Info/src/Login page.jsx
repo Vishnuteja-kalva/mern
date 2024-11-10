@@ -15,7 +15,15 @@ export let Login = () => {
         if (username === '' || password === '') {
             alert('Please fill in all the required fields.');
         } else {
-            axios.post('http://localhost:3000/login', { username, password })
+            axios.post('http://localhost:3000/login', 
+                { username, password },
+                {
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  withCredentials: true
+                }
+              )
                 .then(result => {
                     const { message } = result.data;
                     if (message === "Success") {
