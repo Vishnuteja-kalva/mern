@@ -29,7 +29,7 @@ app.post('/login', (req, res) => {
    });
 });
 
-app.post('/userinfo', (req, res) => {
+app.post('/', (req, res) => {
     UserModel.create(req.body)
     .then(users => res.json(users))
     .catch(err => console.log(err));
